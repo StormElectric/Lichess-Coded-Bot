@@ -1,4 +1,4 @@
-token: "lip_LxOdszffnb7u1m35raeW"    # Lichess OAuth2 Token.
+token: "lip_GYKYx31XUn2s2ZOVhmEM"    # Lichess OAuth2 Token.
 url: "https://lichess.org/"  # Lichess base URL.
 
 engine:                      # Engine settings.
@@ -104,3 +104,10 @@ challenge:                   # incoming challenges
   modes:                     # game modes to accept
     - casual                 # unrated games
     - rated                  # rated games - must comment if the engine doesn't try to win
+greeting:
+    # Optional substitution keywords (include curly braces):
+    #   {opponent} to insert opponent's name
+    #   {me} to insert bot's name
+    # Any other words in curly braces will be removed.
+    hello: "Hello {opponent}, Welcome to the game! Good luck!" # Message to send to chat at the start of a game
+    goodbye: "Good game! Thanks for playing with me!" # Message to send to chat at the end of a game
