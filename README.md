@@ -1,5 +1,5 @@
 # MAINTAINERS 
-- [Kingnandi](https://lichess.org/@/Kingnandi) and [ChessGreatPlayer](https://lichess.org/@/ChessGreatPlayer)
+- [RoyalRacer_2](lichess.org/@/royalracer_2)
 
 [![Python](https://github.com/LichessBot-Coders/Lichess-Coded-Bots/actions/workflows/Python.yml/badge.svg)](https://github.com/LichessBot-Coders/Lichess-Coded-Bots/actions/workflows/Python.yml)
 [![Docker](https://github.com/LichessBot-Coders/Lichess-Coded-Bots/actions/workflows/Docker.yml/badge.svg)](https://github.com/LichessBot-Coders/Lichess-Coded-Bots/actions/workflows/Docker.yml)
