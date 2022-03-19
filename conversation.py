@@ -20,31 +20,27 @@ class Conversation:
 
     def command(self, line, game, cmd):
         if cmd == "commands" or cmd == "help":
-            self.send_reply(line, "Supported commands: !wait(only works at start of the game), !name, !howto, !eval, !queue, !id, !github")
+            self.send_reply(line, "Supported commands: !wait, !name, !howto, !eval, !queue")
         elif cmd == "wait" and game.is_abortable():
             game.ping(60, 120)
             self.send_reply(line, "Waiting 60 seconds...")
         elif cmd == "name":
             name = game.me.name
-            self.send_reply(line, "{} using c++ and java codes running {} (lichess-bot v{}) on heroku server.".format(name, self.engine.name(), self.version))
-        elif cmd == "id":
-            self.send_reply(line, "@RaviharaV")
+            self.send_reply(line, "Resolved-Bot running Fairy-Stockfish 301021 (lichess-bot v2.2.0)")
         elif cmd == "howto":
-            self.send_reply(line, "How to run your own bot: Check out 'Lichess Bot API'")
+            self.send_reply(line, "How to run: Check out 'Lichess Bot API'")
         elif cmd == "eval":
             stats = self.engine.get_stats()
             self.send_reply(line, ", ".join(stats))
         elif cmd == "eval":
-            self.send_reply(line, "That's the evaluation of the position according to my engine! ")
+            self.send_reply(line, "I don't tell that to my opponent, sorry. ")
         elif cmd == "queue":
             if self.challengers:
                 challengers = ", ".join(["@" + challenger.challenger_name for challenger in reversed(self.challengers)])
                 self.send_reply(line, "Challenge queue: {}".format(challengers))
             else:
-                self.send_reply(line, "No challenges queued. Wait for my current game to finish then kindly challenge.")
-        elif cmd == "github":
-            self.send_reply(line, "https://github.com/RaviharaV-bot/Lichess-Coded-Bot")
-                
+                self.send_reply(line, "No challenges queued.")
+                        
     def send_reply(self, line, reply):
         self.xhr.chat(self.game.id, line.room, reply)
 
